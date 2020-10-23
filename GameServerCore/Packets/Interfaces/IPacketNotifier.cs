@@ -59,11 +59,13 @@ namespace GameServerCore.Packets.Interfaces
         void NotifyInhibitorState(IInhibitor inhibitor, IGameObject killer = null, List<IChampion> assists = null);
         void NotifyItemsSwapped(IChampion c, byte fromSlot, byte toSlot);
         // TODO: move handling to PacketDefinitions
+        void NotifyIfMovingHandled(IChampion c);
         void NotifyKeyCheck(ulong userId, uint playerNo);
         void NotifyLaneMinionSpawned(ILaneMinion m, TeamId team);
         void NotifyLeaveVision(IGameObject o, TeamId team);
         void NotifyLevelPropSpawn(int userId, ILevelProp levelProp);
         void NotifyLevelUp(IChampion c);
+        void NotifyLevelUpByType(IChampion c, int Type);
         void NotifyLoadScreenInfo(int userId, List<Tuple<uint, ClientInfo>> players);
         void NotifyLoadScreenPlayerChampion(int userId, Tuple<uint, ClientInfo> player);
         void NotifyLoadScreenPlayerName(int userId, Tuple<uint, ClientInfo> player);
